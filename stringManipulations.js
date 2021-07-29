@@ -20,7 +20,7 @@ const str2 = "Reverse";
 // reverse("foo 𝌆 bar mañana mañana");
 // reverse("Kutty $%# story");
 
-// METHOD 2 is better
+// METHOD 2
 
 function reverse2 (originalString){
     let reversedWord ="";
