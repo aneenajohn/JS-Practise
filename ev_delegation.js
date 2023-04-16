@@ -7,6 +7,19 @@ let menu = document.querySelector("#menu");
 
 menu.addEventListener('click', (e) => {
     let target = e.target;
+
+    console.log(e.target.tagName);
+    if(e.target.tagName === "LI"){
+        window.location.href = "#" + e.target.id;
+       
+        console.log(e.target.classList.value);
+        if(e.target.classList.value?.includes("test")){
+            e.target.classList.remove("test");
+        }else {
+            e.target.classList.add("test");
+        }
+    }
+    
     switch(target.id){
         case "home":
             console.log("Home is clicked!");
