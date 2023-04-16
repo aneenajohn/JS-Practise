@@ -72,11 +72,11 @@ console.log("arr1Flattened: ", arr1Flattened);
 
 console.log("arr1: ", arr1);
 
-const myFlatArrNLevel = (arr,n) => {
+const myFlatArrNLevel = (arr, flattenDepth = 1) => {
     let flattenedArr = [];
-    let depth = n;
+    let depth = flattenDepth;
     while (depth > 0){
-        if(depth === n) {
+        if(depth === flattenDepth) {
             arr.map((item) => {
                 if(Array.isArray(item)){
                     flattenedArr = [...flattenedArr, ...item]
