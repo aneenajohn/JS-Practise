@@ -19,20 +19,20 @@ console.log("Two level flattenedArr: ", flattenedArr2Level);
 const flattenedArr1 = [].concat(...arr);
 console.log("FlattenedArr2: ", flattenedArr1);
 
-let customFlat = [];
+let customFlatRes = [];
 const customFlattend = arr.map((item) => {
     return (
         // let flat = [...]
         // customFlat.concat(...item)
         // console.log(...item);
-        customFlat.push(...item)
+        customFlatRes.push(...item)
     )
 })
 
-console.log("customFlattend: ", customFlat);
+console.log("customFlattend: ", customFlatRes);
 
 let level2 = []
-customFlat.map((item) =>  {
+customFlatRes.map((item) =>  {
     if(Array.isArray(item)) {
         level2.push(...item)
     } else {
@@ -104,3 +104,18 @@ const myFlatArrNLevel = (arr, flattenDepth = 1) => {
 console.log("myFlatArrNLevel: ", myFlatArrNLevel(arr1,3));
 
 
+// Better Optimised Approach:
+const customFlat = (arr, depth = 1) => {
+    let res = [];
+    arr.forEach(element => {
+        if(Array.isArray(element) && depth > 0){
+            res.push(...customFlat(arr, depth -1))
+        } else {
+            res.push(element)
+        }
+    })
+    return res;
+}
+
+ 
+console.log("Optimised flat: ",customFlat(arr1, 2));
