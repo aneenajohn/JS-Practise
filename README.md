@@ -16,3 +16,7 @@
  - Var and let can be redefined
  - Const cant be redefined
 
+## Initialisation
+ - Var and let can initialised without actual giving it any value.
+ - Const can be initialised only with some value.
+

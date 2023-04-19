@@ -1,3 +1,5 @@
+
+// NOTE: SCOPE:
 var aa = 20;
 {
     var a = 10;
@@ -20,6 +22,7 @@ const cc = 100;
 // DOCS: Var has function scope whereas let and const have block scioping hence not available outside the block
 
 
+// NOTE: Redeclaration
 var a =50;
 
 console.log("Redeclared var a: ", a);
@@ -30,8 +33,18 @@ console.log("Redeclared var a: ", a);
 
 // DOCS: Var can be redeclared, let and const can be redeclared
 
+
+// NOTE: Redefinition
 a= 40;
 bb = 5050;
-cc = 1000; // NOTE: TypeError: Assignment to constant variable.
+// cc = 1000; // NOTE: TypeError: Assignment to constant variable.
 
-console.log("a,bb,cc", a,bb,cc);
+// console.log("a,bb,cc", a,bb,cc);
+
+
+
+
+// NOTE: Initialisation
+var amp;
+let camp;
+// const d; // NOTE: SyntaxError: Missing initializer in const declaration
