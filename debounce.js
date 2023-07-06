@@ -10,6 +10,16 @@ function debounce(cb, delay) {
     }
 }
 
+function debounce(cb, delay) {
+    let timer;
+    return function(...args) {
+        if(timer) clearTimeout(timer)
+        setTimeout(() => {
+            c
+        })
+    }
+}
+
 
 const inputRef = document.querySelector("#input");
 
