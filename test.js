@@ -57,3 +57,14 @@ var counterFunc = (function () {
   console.log(counter.decrement());
   console.log(counter.decrement());
   console.log(counter.value());
+
+  function welcome(name) {
+    var greetingInfo = function(message) {
+      console.log(message + " " + name);
+    }
+    return greetingInfo;
+  }
+
+  const info = welcome("Aneena");
+  info("Hello");
+  info("Hi, Ms. ")
