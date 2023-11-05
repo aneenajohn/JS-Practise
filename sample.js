@@ -1,5 +1,4 @@
-let posts = [
-    {
+let posts = [{
         author: 'saransh',
         title: 'Learning context API and the useContext React hook',
         year: 2013
@@ -33,13 +32,13 @@ let posts = [
 //     }]
 // }
 
-const groupBy = (inputArr,key) => {
+const groupBy = (inputArr, key) => {
     return inputArr.reduce((acc, currentValue) => {
         let groupKey = currentValue[key];
-        if(!acc[groupKey]) acc[groupKey] = []
+        if (!acc[groupKey]) acc[groupKey] = []
         acc[groupKey].push(currentValue);
         return acc;
-    },{})
+    }, {})
 }
 
 const res = groupBy(posts, 'author');
