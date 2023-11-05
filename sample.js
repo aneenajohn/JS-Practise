@@ -35,9 +35,7 @@ let posts = [
 
 const groupBy = (inputArr,key) => {
     return inputArr.reduce((acc, currentValue) => {
-        console.log({acc, currentValue});
         let groupKey = currentValue[key];
-        console.log(groupKey);
         if(!acc[groupKey]) acc[groupKey] = []
         acc[groupKey].push(currentValue);
         return acc;
