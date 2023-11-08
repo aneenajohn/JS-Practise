@@ -32,3 +32,20 @@ for (let col = 0; col < rowsAndCol; col++) {
 }
 console.log("Pattern2: ")
 console.log(pattern2);
+
+
+// * * *
+// * *
+// *
+console.log("Q3:")
+let pattern3 = "";
+let maxColsInARow = 3
+for(let col=0; col < rowsAndCol; col++) {
+    for(let row = maxColsInARow; row > 0; row--){
+        pattern3 += "* "
+    }
+    pattern3 += "\n";
+    maxColsInARow--;
+}
+console.log(pattern3);
+
