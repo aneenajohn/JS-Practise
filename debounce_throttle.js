@@ -4,6 +4,9 @@ const pointer = document.querySelector('.pointer');
 let count = 0;
 
 function onMouseMove(e) {
+    if(pointer.classList.contains('hidden')) {
+        showMousePointer();
+    }
     const {
         offsetX,
         offsetY
@@ -13,6 +16,8 @@ function onMouseMove(e) {
     pointer.style.transform = `translate(${x}px,${y}px)`;
     count++;
     console.log("Count: ", count);
+
+    debouncedHideMousePointer();
 }
 
 // container.addEventListener('mousemove', onMouseMove);
@@ -49,3 +54,25 @@ const throttle_v2 = (func, delay) => {
 const throttledMouseMove_v2 = throttle_v2(onMouseMove, 100);
 
 container.addEventListener('mousemove', throttledMouseMove_v2);
+
+
+// Task2: to hide this pointer, after the user stops moving his mouse pointer, after 3 seconds.
+function hideMousePointer() {
+    pointer.classList.add('hidden')
+}
+
+function showMousePointer() {
+    pointer.classList.remove('hidden')
+}
+
+function debounce(func, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        setTimeout(() => {
+            func(...args)
+        }, delay)
+    }
+}
+
+const debouncedHideMousePointer = debounce(hideMousePointer, 3000)
