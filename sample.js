@@ -27,6 +27,36 @@ const composedRes = compose(multiplyBy5, subtract1, add2)(4);
 console.log({composedRes});
 
 // PIPE:
+// To get the compose order from left to right, we can use reduce function
 const pipe = (...funcs) => (val) => funcs.reduce((prev, func) => func(prev), val);
-const pipedRes = pipe(multiplyBy5, subtract1, add2)(4);
-console.log({pipedRes});
+const pipeRes = pipe(multiplyBy5, subtract1, add2)(4);
+console.log({pipeRes});
+
+const pipeRes2 = pipe(add2, subtract1, multiplyBy5)(4);
+console.log({pipeRes2});
+
+// DOCS: Pointer free style where you don't see a unary parameter being passed between each functions.
+
+const divideBy = (divisor, num) => num /divisor;
+
+const pipeRes3 = pipe(
+    add2,
+    subtract1,
+    multiplyBy5,
+    (x) => divideBy(5, x)
+)(4);
+console.log({pipeRes3})
+
+// or We can create specialized function with currying to reframe divideBy;
+
+const divBy = (divisor) => (num) => num /divisor;
+const divBy5 = divBy(5);
+
+const pipeRes4 = pipe(
+    add2,
+    subtract1,
+    multiplyBy5,
+    divBy5
+)(4);
+console.log({pipeRes4});
+
