@@ -34,5 +34,3 @@ function create2DArray4(m, n) {
   return [...Array(m)].map(() => Array(n).fill(0));
 }
 // DOCS: Pros: Concise, easy to understand Cons: Performance might be slightly inferior to other methods.
-
-// check
