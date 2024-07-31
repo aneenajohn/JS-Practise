@@ -9,6 +9,7 @@
 ### Object.freeze()
 
 _Description:_ Makes an object completely immutable.
+
 _Effects:_
 
 - Cannot add properties: New properties cannot be added to the object.
@@ -30,6 +31,7 @@ delete obj.a;       // No effect
 ### Object.preventExtensions()
 
 _Description:_ Prevents the addition of new properties to an object.
+
 _Effects:_
 
 - Cannot add properties: New properties cannot be added to the object.
@@ -52,6 +54,7 @@ delete obj.a;       // Allowed
 ### Object.seal()
 
 _Description:_ Prevents the addition or removal of properties but allows the modification of existing properties.
+
 _Effects:_
 
 - Cannot add properties: New properties cannot be added to the object.
