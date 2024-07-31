@@ -1,11 +1,3 @@
-| Method                         | Add Properties | Remove Properties | Modify Properties | Reconfigure Properties                  |
-| ------------------------------ | -------------- | ----------------- | ----------------- | --------------------------------------- |
-| **Object.freeze()**            | No             | No                | No                | No                                      |
-| **Object.preventExtensions()** | No             | Yes               | Yes               | Yes                                     |
-| **Object.seal()**              | No             | No                | Yes               | No (all properties configurable: false) |
-
-![Alt text](image.png)
-
 ### Object.freeze()
 
 _Description:_ Makes an object completely immutable.
@@ -73,3 +65,13 @@ obj.b = 3;          // No effect
 delete obj.a;       // No effect
 
 ```
+
+### Summary:
+
+| Method                         | Add Properties | Remove Properties | Modify Properties | Reconfigure Properties                  |
+| ------------------------------ | -------------- | ----------------- | ----------------- | --------------------------------------- |
+| **Object.freeze()**            | No             | No                | No                | No                                      |
+| **Object.preventExtensions()** | No             | Yes               | Yes               | Yes                                     |
+| **Object.seal()**              | No             | No                | Yes               | No (all properties configurable: false) |
+
+![Alt text](image.png)
