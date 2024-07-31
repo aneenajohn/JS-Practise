@@ -17,6 +17,7 @@ Object.defineProperty(myObj, 'test2', {
 
 // console.log('From map:');
 // Object.keys(myObj).map((key) => console.log(key));
+console.log('getOwnPropertyNames: ', Object.getOwnPropertyNames(myObj));
 
 console.log('From for in loop:');
 for (key in myObj) {
