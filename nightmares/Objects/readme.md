@@ -51,7 +51,7 @@ delete obj.a;       // Allowed
 
 ### Object.seal()
 
-*Description: *Prevents the addition or removal of properties but allows the modification of existing properties.
+_Description:_ Prevents the addition or removal of properties but allows the modification of existing properties.
 _Effects:_
 
 - Cannot add properties: New properties cannot be added to the object.
