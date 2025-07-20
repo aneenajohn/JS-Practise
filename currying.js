@@ -6,6 +6,15 @@ const buildSandwich = (ingredient1) => {
   };
 };
 
+const bs = (i1) => {
+  return (i2) => {
+    return (i3) => {
+      return `${i1} ${i2} ${i3}`;
+    };
+  };
+};
+bs('butter')('lettuce')('cucumber');
+
 console.log(buildSandwich('butter')('lettuce')('cucumber'));
 
 const sandy = (ingredient1) => (ingredient2) => (ingredient3) =>
